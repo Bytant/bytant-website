@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bytant Innovative Group</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+            <div class="logo">
+                <img src="images/R.png" alt="Bytant Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="home">
+        <h1>Welcome to Bytant Innovative Group</h1>
+        <p>team slogan here</p>
+        <button onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+    </section>
+
+    <!---THE ABOUT US AND PROJECTS SECTION HAS THE SAME STYLING. THE CARD CONTAINER IS THE SECTION AND THE LITTLE BOXES ARE THE CARDS-->
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/OIP (1).jpeg" alt="Teamwork">
+                <h3>Our Mission</h3>
+                <p>Bytant focuses on innovation, collaboration, and impact to solve real-world problems using technology.</p>
+            </div>
+            <div class="card">
+                <img src="images/OIP.jpeg" alt="Vision">
+                <h3>Our Vision</h3>
+                <p>To inspire the next generation of tech leaders and provide solutions that positively impact Africa and beyond.</p>
+            </div>
+            <div class="card">
+                <img src="images/OIP (1).jpeg" alt="Values">
+                <h3>Our Values</h3>
+                <p>We believe in creativity, teamwork, and making technology accessible to everyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Our Projects</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/OIP (1).jpeg" alt="Weather App">
+                <h3>Weather App</h3>
+                <p>A user-friendly app providing campus-specific weather updates for students in Ghana.</p>
+            </div>
+            <div class="card">
+                <img src="images/OIP.jpeg" alt="Robotics Club">
+                <h3>Robotics Club Support</h3>
+                <p>Helping high school students build their first robots by providing essential resources.</p>
+            </div>
+            <div class="card">
+                <img src="images/OIP (1).jpeg" alt="Climate Awareness">
+                <h3>Climate Change Campaign</h3>
+                <p>Promoting awareness and solutions for climate challenges in local communities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form action="bytant.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Bytant Innovative Group. All rights reserved.</p>
+        <ul class="social-links">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
