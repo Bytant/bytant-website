@@ -37,20 +37,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             echo "<p style='color: red; '>$error</p>";
         }
     } else {
-        // PREPARE SQL STATEMENT
-        $stmt = $db_Connection->prepare("INSERT INTO users (name, email, message) VALUES (?, ?, ?)");
-
-        // BIND PARAM
-        $stmt->bindParam(1, $name, PDO::PARAM_STR);
-        $stmt->bindParam(2, $email, PDO::PARAM_STR);
-        $stmt->bindParam(3, $message, PDO::PARAM_STR);
-
-        // EXECUTE THE STATEMENT
         try{
+             // PREPARE SQL STATEMENT
+            $stmt = $db_Connection->prepare("INSERT INTO users (name, email, message) VALUES (?, ?, ?)");
+
+            // BIND PARAM
+            $stmt->bindParam(1, $name, PDO::PARAM_STR);
+            $stmt->bindParam(2, $email, PDO::PARAM_STR);
+            $stmt->bindParam(3, $message, PDO::PARAM_STR);
+
+            // EXECUTE THE STATEMENT
             $stmt->execute();
-            echo "<p style='color: green;'>Message sent successfully</p>";
-        } catch (PDOException $e) {
-            echo "<p style='color: red;'>Error: " . $e->getMessage() . "</p>";
+            echo "<script>
+                alert('Message sent!');
+                window.location.href = 'bytant.html';
+            </script>";
+            exit();
+        } catch(PDOException $e){
+            echo "
+                <script>
+                    alert('An error occured');
+                    window.location.href = 'bytant.php';
+                </script>
+            ";
         }
+       
+        
     }
 }
