@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 require('/var/www/html/vendor/autoload.php');
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -16,7 +14,6 @@ try{
     $db_Connection = new PDO("mysql:host=$host;dbname=$dbName; charset=utf8mb4", $user, $pass);
     $db_Connection->setAttribute(PDO::ATTR_ERRMODE ,PDO::ERRMODE_EXCEPTION);
     $db_Connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    echo "success";
 } catch(PDOException $e){
     echo $e->getMessage();
 }
